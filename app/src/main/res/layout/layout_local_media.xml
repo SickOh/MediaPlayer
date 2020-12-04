@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorTitleBar"
+        android:text="Local Media"
+        android:gravity="center"
+        android:textSize="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:id="@+id/LL_local_media_buttons"
+
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_LOCAL_BACK"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/mainactivity_buttons"
+            android:text="[ BACK ]"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_LOCAL_AUDIO"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/mainactivity_buttons"
+            android:text="Audio"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_LOCAL_VIDEO"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/mainactivity_buttons"
+            android:text="Video"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_LOCAL_PHOTO"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/mainactivity_buttons"
+            android:text="Photos"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BTN_LOCAL_CAMERA"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/mainactivity_buttons"
+            android:text="Camera Photos"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

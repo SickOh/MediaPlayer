@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".LockScreen"
+    android:weightSum="100">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/RL_Lockscreen"
+        android:layout_height="match_parent"
+        android:background="@color/Black"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/rl_lockscreen_info"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/media_title"
+            android:layout_toLeftOf="@+id/BTN_MOVE_NOTIFICATION"
+            android:layout_alignParentStart="true"
+            android:text="Title: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/media_artist"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/BTN_MOVE_NOTIFICATION"
+            android:layout_below="@id/media_title"
+            android:text="Artist: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/media_contributing_artist"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/BTN_MOVE_NOTIFICATION"
+            android:layout_below="@id/media_artist"
+            android:text="Contributing Artist: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/media_album"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@id/BTN_MOVE_NOTIFICATION"
+            android:layout_below="@id/media_contributing_artist"
+            android:text="Album:"/>
+
+
+        <Button
+            android:layout_width="15dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/move_lock_screen"
+            android:id="@+id/BTN_MOVE_NOTIFICATION"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

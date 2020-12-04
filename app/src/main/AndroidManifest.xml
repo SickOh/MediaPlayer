@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.newmusicplayer">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".__test"></activity>
+        <activity android:name=".MainActivityHelp" />
+        <activity android:name="._wifi_photo" />
+        <activity android:name=".DatabaseManageUsers" />
+
+        <receiver android:name="._wifi_audio$ScreenOnOffReceiver">
+            <intent-filter>
+                <action android:name="ACTION_SCREEN_ON" />
+                <action android:name="ACTION_SCREEN_OFF" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".LockScreen" />
+        <activity android:name="._wifi_video" />
+        <activity android:name=".MainActivityServer" />
+        <activity android:name=".DatabaseManageServers" />
+        <activity android:name="._wifi_audio" />
+        <activity android:name=".MainActivityLocal" />
+        <activity android:name=".MainActivityTest" />
+        <activity android:name="._local_dcim_photo" />
+        <activity
+            android:name="._local_photo_list"
+            android:label="@string/title_activity__local_photo_list" />
+        <activity android:name="._video_player" />
+        <activity android:name="._local_video" />
+        <activity android:name="._timer" />
+        <activity android:name="._randomizer" />
+        <activity android:name="._get_files" />
+        <activity
+            android:name="._local_audio"
+            android:label="@string/title_activity_get_file" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-1810260832928954~4160515752" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

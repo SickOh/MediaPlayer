@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:descendantFocusability="blocksDescendants"
+        android:id="@+id/listviewItemHolder">
+
+        <TextView
+            android:id="@+id/lblListItemVideo"
+            android:textSize="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:layout_toLeftOf="@id/LL_PlaySub"
+            android:layout_alignParentLeft="true"
+            android:gravity="left">
+
+
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LL_PlaySub"
+            android:visibility="invisible"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorAccent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/BTN_PLAY_WITHOUT_SUBS"
+                android:background="@drawable/ic_play_no_sub" />
+
+            <Button
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_toEndOf="@id/BTN_PLAY_WITHOUT_SUBS"
+                android:id="@+id/BTN_PLAY_WITH_SUBS"
+                android:background="@drawable/ic_subtitle" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

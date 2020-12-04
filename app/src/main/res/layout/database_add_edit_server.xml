@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorListView"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/ServerNameInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:hint="Server name, eg. Home">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ServerNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/ProtocolInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/ServerNameInputLayout"
+        android:hint="Protocol, eg. http://, https://">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ProtocolEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="http://"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/ipAddressInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/ProtocolInputLayout"
+        android:hint="IP Address, eg. 192.168.0.3">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ipAddressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ipAddressInputLayout"
+        android:background="@color/colorPrimary"
+        android:id="@+id/rlmusic">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/folderMusicInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_toLeftOf="@id/BTN_MUSIC_LOCKED"
+            android:hint="Music alias name, eg. /music">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/folderMusicEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/BTN_MUSIC_LOCKED"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/locked" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/rlmusic"
+        android:background="@color/colorPrimary"
+        android:id="@+id/rlvideo">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/folderVideoInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_toLeftOf="@id/BTN_VIDEO_LOCKED"
+            android:hint="Video alias name, eg. /video">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/folderVideoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/BTN_VIDEO_LOCKED"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/locked" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/rlvideo"
+        android:background="@color/colorPrimary"
+        android:id="@+id/rlphoto">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/folderPhotoInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_toLeftOf="@id/BTN_PHOTO_LOCKED"
+            android:hint="Photo alias name, eg. /photo">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/folderPhotoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/BTN_PHOTO_LOCKED"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/locked" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:weightSum="3"
+        android:layout_below="@id/rlphoto"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/folderPhotoInputLayout"
+
+            android:text="Save" />
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"/>
+        <CheckBox
+            android:id="@+id/alwaysUseButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Always use this server"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

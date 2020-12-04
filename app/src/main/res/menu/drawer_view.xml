@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_music_local"
+            android:title="Music (Local)" />
+        <item
+            android:id="@+id/nav_video_local"
+            android:title="Video (Local)" />
+        <item
+            android:id="@+id/nav_photos_local"
+            android:title="Photos (Local)" />
+        <item
+            android:id="@+id/nav_dcim_local"
+            android:title="Camera Photos" />
+        <item
+            android:id="@+id/nav_music_wifi"
+            android:title="Music (server)" />
+        <item
+            android:id="@+id/nav_manage_server"
+            android:title="Manage servers" />
+    </group>
+</menu>

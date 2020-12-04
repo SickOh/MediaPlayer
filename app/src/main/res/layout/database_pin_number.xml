@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="100"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:id="@+id/LL_Playlist">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Pin Number"
+        android:textSize="25dp"
+        android:textColor="@color/Black"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/textViewPinNumber"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:orientation="vertical"
+        android:id="@+id/layoutSpace"
+        android:layout_below="@id/textViewPinNumber"
+        android:background="@color/colorPrimaryDark"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/pinNumberInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutSpace"
+        android:background="@color/colorPrimary"
+        android:hint="Pin Number">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/pinNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BTN_PIN_OK"
+        android:text="OK"
+        android:layout_below="@id/pinNumberInputLayout"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

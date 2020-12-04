@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:id="@+id/LL_Photo_List">
+
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:fitsSystemWindows="true"
+
+        >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/local_photo_list_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/photo_layout_background"
+                        android:paddingBottom="2dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@id/local_photo_list_toolbar">
+
+
+                        <ListView
+                            android:id="@+id/local_photo_listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="10dp"
+                            android:background="@color/colorPrimary">
+
+                        </ListView>
+
+                    </LinearLayout>
+
+                    <GridView
+                        android:id="@+id/local_photo_gridview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:columnWidth="90dp"
+                        android:paddingTop="10dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="10dp"
+                        android:numColumns="auto_fit"
+                        android:stretchMode="columnWidth"
+                        android:layout_below="@id/photo_layout_background"
+                        android:verticalSpacing="10dp">
+
+                    </GridView>
+
+
+                </RelativeLayout>
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_gravity = "start"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:fitsSystemWindows="true"
+            >
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:focusable="true">
+                <include layout="@layout/nav_header"
+                    android:id="@+id/group_header">
+
+                </include>
+                <ListView
+                    android:id="@+id/lvExp"
+                    android:layout_below="@id/group_header"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:groupIndicator="@android:color/transparent"
+                    android:childDivider="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</FrameLayout>

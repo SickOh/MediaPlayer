@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">newMusicPlayer</string>
+    <string name="title_activity_get_file">GetFileActivity</string>
+    <string name="banner_ad_unit_id">ca-app-pub-1810260832928954~4160515752</string>
+    <string name="title_activity__local_photo_list">_local_photo_list</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="POPUP_BACK">BACK</string>
+
+
+</resources>

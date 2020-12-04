@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "176229772940",
+    "firebase_url": "https://newmusicplayer-390a3.firebaseio.com",
+    "project_id": "newmusicplayer-390a3",
+    "storage_bucket": "newmusicplayer-390a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176229772940:android:e0b65393d4123e77",
+        "android_client_info": {
+          "package_name": "com.example.newmusicplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176229772940-rt3d19liuplqpnjqjtdjn0are5f0pvba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newmusicplayer",
+            "certificate_hash": "476b720d6fdce1449e335c9541c7a2f77ae8d8d3"
+          }
+        },
+        {
+          "client_id": "176229772940-acc6kqdpo682l0dcaqsptib393v62smb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9hZNdqiJyHvegloOZ_Q56Qf-4Xc-sCGY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176229772940-acc6kqdpo682l0dcaqsptib393v62smb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

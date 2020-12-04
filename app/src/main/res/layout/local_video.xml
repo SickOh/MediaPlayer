@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/local_audio_layout"
+    tools:context=".MainActivity">
+
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LL_Video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_video_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:fitsSystemWindows="true"
+
+            >
+
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/RL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/RL_Toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+
+
+
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/local_Video_Toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            >
+
+                            <TextView
+                                android:id="@+id/videoConnectStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:layout_toLeftOf="@+id/retryConnect"
+                                android:gravity="right"
+
+                                />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.Toolbar>
+
+
+                    <ListView
+                        android:id="@+id/local_video_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:layout_below="@+id/local_Video_Toolbar">
+                    </ListView>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/spacer"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@id/local_video_listview">
+                    </LinearLayout>
+
+                    <ListView
+                        android:id="@+id/listview_video_list"
+                        android:layout_width="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/spacer">
+                    </ListView>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/nav_view_video"
+                android:layout_width="match_parent"
+                android:layout_gravity = "start"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:fitsSystemWindows="true"
+                >
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+
+                    android:focusable="true">
+                    <include layout="@layout/nav_header"
+                        android:id="@+id/group_header">
+
+                    </include>
+                    <ListView
+                        android:id="@+id/lvExpVideoDirectory"
+                        android:layout_below="@id/group_header"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:groupIndicator="@android:color/transparent"
+                        android:childDivider="@android:color/transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        />
+
+                </RelativeLayout>
+
+            </android.support.design.widget.NavigationView>
+
+        </android.support.v4.widget.DrawerLayout>
+
+
+
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
