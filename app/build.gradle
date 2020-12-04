@@ -5,7 +5,7 @@ android {
     dataBinding.enabled = true
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.newmusicplayer"
+        applicationId "com.example.MediaPlayer"
         minSdkVersion 27
         targetSdkVersion 28
         versionCode 1
