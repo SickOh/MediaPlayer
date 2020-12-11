@@ -26,6 +26,10 @@ import android.util.Log;
 import android.view.*;
 import android.widget.*;
 
+import com.mpatric.mp3agic.ID3v1;
+import com.mpatric.mp3agic.ID3v1Tag;
+import com.mpatric.mp3agic.Mp3File;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -658,7 +662,6 @@ public class _local_audio extends AppCompatActivity {
                 try{
                     JSONObject jsonResponse = new JSONObject(search.GetOutput());
 
-
                     JSONArray data = jsonResponse.getJSONArray("data");
 
                     list_loaded_songs.add("No Match");
@@ -676,12 +679,6 @@ public class _local_audio extends AppCompatActivity {
 
                             list_tracks.add(str_title);
                             list_track_number.add(str_track_position);
-
-                            //map_tracks.put(str_track_position, str_title);
-                            //String artist_temp = track.getString("artist");
-                            //String str_artist = artist_temp.substring(artist_temp.indexOf("\"name\":") + 7, artist_temp.indexOf(",\"link\"")).replace("\"", "");
-
-
                         }catch (Exception ex) { }
                     }
 
@@ -761,6 +758,8 @@ public class _local_audio extends AppCompatActivity {
         }
 
         File file;
+        String tempFile2 = "";
+        ArrayList<String> tempList = new ArrayList<>();
 
         try {
             int track_position = 0;
@@ -768,6 +767,7 @@ public class _local_audio extends AppCompatActivity {
             TreeMap<Integer, String> tempMap = new TreeMap<>();
 
             for (String tempFile : xItems){
+                tempFile2 = tempFile;
                 if(!tempFile.startsWith(".")){
                     file = new File(songPath + "/" + tempFile);
 
@@ -786,41 +786,42 @@ public class _local_audio extends AppCompatActivity {
                         }
                         if (tempBool) {
 
-                            mmr.setDataSource(songPath + "/" + tempFile);
-
                             try{
+                                mmr.setDataSource(songPath + "/" + tempFile);
                                 track_position = Integer.parseInt(mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_CD_TRACK_NUMBER));
-                                //Log.i("INFO: ", track_position + " " + songPath + "/" + tempFile);
 
-                            }catch (Exception ex){ }
-
-                            if(track_position >= 1){
-                                tempMap.put(track_position, tempFile);
-                            }else{
-                                listDataSongs.add(tempFile);
+                                if(tempMap.containsKey(track_position)){
+                                    tempList.add(tempFile);
+                                }else{
+                                    tempMap.put(track_position, tempFile);
+                                }
+                            }catch (Exception ex){
+                                tempList.add(tempFile);
                             }
+
 
                         }
                     }
                 }
             }
-
-            if(tempMap.size() == 0){
-                Collections.sort(listDataSongs);
-            }else{
+            Collections.sort(tempList);
+            if(tempMap.size() > 0){
                 for(Integer key : tempMap.keySet()){
                     list_track_number.add(String.valueOf(key));
                     listDataSongs.add(tempMap.get(key));
                 }
-                //listDataSongs.addAll(tempMap.values());
+            }
+            for(String str : tempList){
+                list_track_number.add(String.valueOf(0));
+                listDataSongs.add(str);
             }
             expSongAdapter.notifyDataSetChanged();
         } catch (Exception e) {
-            Log.d("EXCEPTION: ", "_local_audio.setSongs: " + e.toString());
+            Log.i("EXCEPTION: ", "_local_audio.setSongs: " + e.toString() + " : " + songPath + "/" + tempFile2);
         }
     }
 
-    public int setExpDirectoryAdapter(String path, Boolean boolTest){
+    public void setExpDirectoryAdapter(String path, Boolean boolTest){
         try {
             File maindir = new File(path);
             ArrayList<String> tempArrayList = new ArrayList<>();
@@ -830,7 +831,7 @@ public class _local_audio extends AppCompatActivity {
                 File arr[] = maindir.listFiles();
 
                 for (int i = 0; i < arr.length; i++) {
-                    if (arr[i].isDirectory()) {
+                    if (arr[i].isDirectory() && !arr[i].getName().startsWith(".")) {
                         if (!boolTest) {
                             tempArrayList.add(arr[i].getName());
                         } else {
@@ -843,11 +844,9 @@ public class _local_audio extends AppCompatActivity {
                 listDataDirectory.addAll(tempArrayList);
             }
             expDirectoryAdapter.notifyDataSetChanged();
-            return testArrayList.size();
         }catch (Exception e){
             Log.d("EXCEPTION: ", "_local_audio.setExpDirectoryAdapter: " + e.toString());
         }
-        return 0;
     }
 
     public MediaPlayer getActiveMediaPlayer() {
@@ -1329,21 +1328,23 @@ public class _local_audio extends AppCompatActivity {
     }
 
     public void dialogBoxTrackList(){
-        //try {
-            alertDialogBuilder = new AlertDialog.Builder(this);
-            LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.vivo, null);
-            alertDialogBuilder.setView(layout);
 
-            list = layout.findViewById(R.id.list_vivo);
-            Button btn_ok = layout.findViewById(R.id.BTN_VIVO_OK);
-            Button btn_cancel = layout.findViewById(R.id.BTN_VIVO_CANCEL);
+        alertDialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.vivo, null);
+        alertDialogBuilder.setView(layout);
+
+        list = layout.findViewById(R.id.list_vivo);
+        Button btn_ok = layout.findViewById(R.id.BTN_VIVO_OK);
+        Button btn_cancel = layout.findViewById(R.id.BTN_VIVO_CANCEL);
 
 
-            expTrackList = new ListViewAdapterVivoTracks(_local_audio.this, R.layout.list_vivo_tracks, R.id.txt_track,
-                    list_tracks, list_loaded_songs, this);
-            list.setAdapter(expTrackList);
-/*
+        expTrackList = new ListViewAdapterVivoTracks(_local_audio.this, R.layout.list_vivo_tracks, R.id.txt_track,
+                list_tracks, list_loaded_songs, this);
+        list.setAdapter(expTrackList);
+
+
+            /*
             btn_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -1370,19 +1371,17 @@ public class _local_audio extends AppCompatActivity {
 
 
  */
-            btn_cancel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //list_track_list.clear();
-                    alertDialog.dismiss();
-                }
-            });
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //list_track_list.clear();
+                alertDialog.dismiss();
+            }
+        });
 
-            alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
-        //}catch (Exception e){
-        //    Log.d("EXCEPTION: ", "_local_audio.DeletePlaylistSong: " + e.toString());
-        //}
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
     }
 
     private void LoadListArtist(String dirPath){

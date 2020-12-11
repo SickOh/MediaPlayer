@@ -20,7 +20,6 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.*;
 import android.widget.*;
-import com.google.android.gms.ads.AdView;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -66,7 +65,6 @@ public class _wifi_audio extends AppCompatActivity {
     AlertDialog alertDialog;
     Cursor cursor;
     TextInputEditText textInputEditText;
-    private AdView mAdView;
     MediaPlayer mPlayer;
     LinearLayout playButtonBackground, pauseButtonBackground;
     TextView connectStatus;
@@ -1054,6 +1052,7 @@ public class _wifi_audio extends AppCompatActivity {
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 String str = in.readLine();
+
 
                 while (!str.equals("")) {
                     String link = str.substring(0, str.indexOf("<>"));
